@@ -11,7 +11,7 @@ SELECT to_tsvector('Съешь ещё этих мягких французски
                     to_tsvector
 'булок':6 'вып':8 'ещ':2 'мягк':4 'съеш':1 'французск':5 'ча':9 'эт':3
 ```
-В векторе отсутствует слово **да**, т.к. это слово распознаётся словарём как стоп-слово.</br></br>
+В векторе отсутствует слово `да`, т.к. это слово распознаётся словарём как стоп-слово.</br></br>
 **2. Тип tsquery**</br>
 Задание 2</br>
 @@ - оператор типа boolean, проверяющий соответствие tsvector и tsquery.</br>
@@ -27,7 +27,7 @@ SELECT to_tsvector('The quick brown fox jumped over the lazy dog')
 SELECT to_tsvector('The quick brown fox jumped over the lazy dog')  
     @@ to_tsquery('foxhound');
 ```
-первый и второй возвращают **true**, а третий **false**. Это связано с тем, что **fox** и **foxhound** 
+первый и второй возвращают **true**, а третий **false**. Это связано с тем, что `fox` и `foxhound`
 являются разными по смыслу словами (fox - лиса, foxhound - порода собаки). Лексема в словаре для слова fox - fox, для foxhound - foxhound.
 </br>
 В результате запроса
